@@ -12,6 +12,7 @@ const zenkakuGN = Zen_Kaku_Gothic_New({
 });
 
 import { ThemeProvider } from "@/components/theme-provider";
+import Sidebar from "./ui/sidebar";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -67,7 +68,7 @@ export default function RootLayout({
 						</header>
 						<div className="max-w-[1440px] w-full h-full grid lg:grid-cols-[1fr_320px] md:grid-cols-[1fr_300px] sm:grid-cols-1 gap-2">
 							{children}
-							<aside className="border bg-secondary w-full h-full">side bar</aside>
+							<Sidebar />
 						</div>
 						<footer className="w-full bg-secondary px-2 py-2 flex items-start">
 							footer
