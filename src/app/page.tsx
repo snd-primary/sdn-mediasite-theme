@@ -1,7 +1,7 @@
 import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { DrawingPinIcon } from "@radix-ui/react-icons";
+import { DrawingPinIcon, ClockIcon, ReaderIcon } from "@radix-ui/react-icons";
 
 type blogPostsType = {
 	key: number;
@@ -41,7 +41,8 @@ const blogPosts: blogPostsType[] = [
 	},
 	{
 		key: 5,
-		title: "WebパフォーマンスチューニングのコツTOP10",
+		title:
+			"WebパフォーマンスチューニングのコツTOP10 WebパフォーマンスチューニングのコツTOP10",
 		description:
 			"ローディング時間を削減し、ユーザー体験を向上させるための実践的なテクニックを10個ご紹介。簡単なものから高度なものまで幅広く解説します。",
 		imgPath: "/images/dummy.png",
@@ -52,21 +53,27 @@ const LinkCard: React.FC<blogPostsType> = ({ ...props }) => {
 	return (
 		<li
 			key={props.key}
-			className="grid grid-rows-subgrid row-span-4  gap-2 border rounded-sm overflow-hidden "
+			className=" w-full h-full grid grid-rows-subgrid row-span-4 gap-2 border rounded-sm overflow-hidden"
 		>
-			<Link href={"/"} className="relative w-full aspect-video ">
+			<Link href={"/"} className="relative w-full aspect-video tracking-wide">
 				<Image
 					className="object-cover"
 					src={props.imgPath}
 					alt="ブログ記事サムネイルのダミー画像"
 					fill
 				/>
-				<span className="absolute left-2 top-2 text-xs font-bold bg-primary/80 text-background px-2 py-0.5">
+				<span className="absolute left-1 bottom-1 text-xs bg-primary/40 text-background px-2 py-0.5">
 					2024/07/30
+				</span>
+				<span className="flex items-center gap-1 absolute bottom-1 right-1 text-xs  bg-primary/40 text-background px-2 py-0.5 ">
+					<ReaderIcon />
+					5min read
 				</span>
 			</Link>
 			<Link href={"/"}>
-				<h3 className="text-base px-2">{props.title}</h3>
+				<h3 className=" leading-[1.5] h-[3.1em] overflow-hidden border-b mx-2 font-bold font-zenkakuGN">
+					{props.title}
+				</h3>
 			</Link>
 			<div className="px-2">
 				<Link
@@ -78,7 +85,7 @@ const LinkCard: React.FC<blogPostsType> = ({ ...props }) => {
 				</Link>
 			</div>
 			<div className="px-2 pb-2">
-				<p className="text-sm  leading-[1.5] h-[4.5em] overflow-hidden">
+				<p className="text-sm  leading-[1.7] h-[5.1em] overflow-hidden">
 					{props.description}
 				</p>
 			</div>
@@ -90,7 +97,7 @@ export default function Home() {
 	return (
 		<main className="grid max-w-full w-full h-full border">
 			<section className=" p-2">
-				<ul className="w-full h-full grid grid-cols-2 lg:grid-cols-3 gap-2 align-top">
+				<ul className="w-full h-fit grid grid-cols-2  lg:grid-cols-3 gap-2">
 					{blogPosts.map((post) => (
 						<LinkCard
 							key={post.key}

@@ -9,7 +9,6 @@ const zenkakuGN = Zen_Kaku_Gothic_New({
 	weight: ["400", "700"],
 	preload: false,
 	display: "swap",
-	variable: "--font-zenkakuGN",
 });
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -39,7 +38,7 @@ export default function RootLayout({
 					// disableTransitionOnChange
 				>
 					<div className="grid w-full h-full grid-cols-1 grid-rows-[80px_1fr_320px] relative justify-center justify-items-center content-between gap-4">
-						<header className="w-full bg-secondary px-8 py-2 h-20 flex items-center justify-between">
+						<header className="w-full bg-secondary px-8 py-2 h-20 flex items-center justify-between ">
 							<Link
 								href="/"
 								className="flex py-2 px-2 text-center bg-card-foreground text-background"

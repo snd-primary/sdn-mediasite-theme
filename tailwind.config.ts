@@ -56,7 +56,6 @@ const config = {
 					foreground: "hsl(var(--card-foreground))",
 				},
 			},
-
 			fontFamily: {
 				zenkakuGN: ["var(--font-zenkakuGN)", ...fontFamily.sans],
 				initial: [
@@ -76,6 +75,7 @@ const config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
+
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -90,6 +90,11 @@ const config = {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
+		},
+	},
+	variants: {
+		extend: {
+			alignItems: ["responsive", "hover", "focus"],
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
