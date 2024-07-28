@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import plugin from "tailwindcss";
 
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
@@ -75,7 +74,6 @@ const config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
-
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -97,7 +95,10 @@ const config = {
 			alignItems: ["responsive", "hover", "focus"],
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/container-queries"),
+	],
 } satisfies Config;
 
 export default config;
