@@ -65,7 +65,7 @@ export default function RootLayout({
 								</ul>
 							</nav>
 						</header>
-						<div className="max-w-[1440px] w-full h-full grid md:grid-cols-[1fr_300px] sm:grid-cols-1 gap-2">
+						<div className="max-w-[1440px] w-full h-full grid lg:grid-cols-[1fr_320px] md:grid-cols-[1fr_300px] sm:grid-cols-1 gap-2">
 							{children}
 							<aside className="border bg-secondary w-full h-full">side bar</aside>
 						</div>

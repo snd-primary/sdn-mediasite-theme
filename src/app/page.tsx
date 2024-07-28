@@ -2,6 +2,8 @@ import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DrawingPinIcon, ClockIcon, ReaderIcon } from "@radix-ui/react-icons";
+import Pagination from "./ui/pagination";
+import Breadcrumb from "./ui/breadcrumb";
 
 type blogPostsType = {
 	key: number;
@@ -95,8 +97,12 @@ const LinkCard: React.FC<blogPostsType> = ({ ...props }) => {
 
 export default function Home() {
 	return (
-		<main className="grid max-w-full w-full h-full border">
-			<section className=" p-2">
+		<main className="grid max-w-full w-full h-full md:px-2">
+			<section className="grid grid-cols-1 gap-8 ">
+				<div className="border-b py-3  rounded  w-full h-full flex items-center">
+					<h2 className="text-3xl font-bold ">All Posts</h2>
+				</div>
+				<Breadcrumb />
 				<ul className="w-full h-fit grid grid-cols-2  lg:grid-cols-3 gap-2">
 					{blogPosts.map((post) => (
 						<LinkCard
@@ -107,6 +113,8 @@ export default function Home() {
 						/>
 					))}
 				</ul>
+
+				<Pagination className="mt-12" />
 			</section>
 		</main>
 	);
