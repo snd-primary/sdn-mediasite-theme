@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "@/styles/globals.css";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-const inter = Inter({ subsets: ["latin"] });
+
+const zenkakuGN = Zen_Kaku_Gothic_New({
+	weight: ["400", "700"],
+	preload: false,
+	display: "swap",
+	variable: "--font-zenkakuGN",
+});
 
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -22,8 +28,8 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={cn(
-					"min-h-screen h-svh bg-background font-sans antialiased",
-					inter.className
+					"min-h-screen h-svh bg-background font-initial tracking-wide antialiased ",
+					zenkakuGN.className
 				)}
 			>
 				<ThemeProvider

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss";
 
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
@@ -57,7 +58,18 @@ const config = {
 			},
 
 			fontFamily: {
-				sans: ["var(--font-sans)", ...fontFamily.sans],
+				zenkakuGN: ["var(--font-zenkakuGN)", ...fontFamily.sans],
+				initial: [
+					"Helvetica Neue",
+					"Arial",
+					"Hiragino Kaku Gothic ProN",
+					"Hiragino Sans",
+					"Meiryo",
+					"sans-serif",
+				],
+			},
+			letterSpacing: {
+				// wide: "0.018rem",
 			},
 			borderRadius: {
 				lg: "var(--radius)",
