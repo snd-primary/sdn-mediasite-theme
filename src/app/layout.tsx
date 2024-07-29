@@ -13,6 +13,8 @@ const zenkakuGN = Zen_Kaku_Gothic_New({
 
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "./ui/sidebar";
+import Header from "./ui/header";
+import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -39,40 +41,12 @@ export default function RootLayout({
 					// disableTransitionOnChange
 				>
 					<div className="grid w-full h-full grid-cols-1 grid-rows-[80px_1fr_320px] relative justify-center justify-items-center content-between gap-4">
-						<header className="w-full bg-secondary px-8 py-2 h-20 flex items-center justify-between ">
-							<Link
-								href="/"
-								className="flex py-2 px-2 text-center bg-card-foreground text-background"
-							>
-								LogoImage Here
-							</Link>
-							<nav>
-								<ul className="flex items-center justify-center gap-4">
-									<li>
-										<Link href="/">menu1</Link>
-									</li>
-									<li>
-										<Link href="/">menu2</Link>
-									</li>
-									<li>
-										<Link href="/">menu3</Link>
-									</li>
-									<li>
-										<Link href="/">menu4</Link>
-									</li>
-									<li>
-										<Link href="/">menu5</Link>
-									</li>
-								</ul>
-							</nav>
-						</header>
-						<div className="max-w-[1440px] w-full h-full grid lg:grid-cols-[1fr_320px] md:grid-cols-[1fr_300px] sm:grid-cols-1 gap-2">
+						<Header />
+						<div className="max-w-[1440px] w-full h-full grid lg:grid-cols-[1fr_320px] md:grid-cols-[1fr_300px] sm:grid-cols-1 gap-2 px-2">
 							{children}
 							<Sidebar />
 						</div>
-						<footer className="w-full bg-secondary px-2 py-2 flex items-start">
-							footer
-						</footer>
+						<Footer />
 					</div>
 				</ThemeProvider>
 			</body>
