@@ -2,6 +2,8 @@ import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DrawingPinIcon, ClockIcon, ReaderIcon } from "@radix-ui/react-icons";
+import Tag from "./tag";
+import ReadTimeTip from "./readTimeTip";
 
 export type BlogCardProps = {
 	key: number;
@@ -26,26 +28,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ ...props }) => {
 				<span className="absolute left-1 bottom-1 text-xs bg-primary/40 text-background px-2 py-0.5">
 					2024/07/30
 				</span>
-				<span className="flex items-center gap-1 absolute bottom-1 right-1 text-xs  bg-primary/40 text-background px-2 py-0.5 ">
-					<ReaderIcon />
-					5min read
-				</span>
+				<ReadTimeTip time="5" />
 			</Link>
-			<Link href={"/"}>
+			<Link href={"/"} passHref>
 				<h3 className=" leading-[1.5] h-[3.1em] overflow-hidden border-b mx-2 font-bold font-zenkakuGN">
 					{props.title}
 				</h3>
 			</Link>
-			<div className="px-2">
-				<Link
-					href={"/"}
-					className="flex items-center gap-1 border rounded-lg pt-0.5 pl-1 pr-2 w-fit"
-				>
-					<DrawingPinIcon />
-					<span className=" text-sm ">TS</span>
-				</Link>
-			</div>
-			<div className="px-2 pb-2">
+			<div className="px-2 pb-2 grid grid-cols-1 gap-2">
+				<Tag name="TypeScript" />
 				<p className="text-sm  leading-[1.7] h-[5.1em] overflow-hidden">
 					{props.description}
 				</p>

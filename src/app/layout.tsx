@@ -27,7 +27,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="ja">
 			<body
 				className={cn(
 					"min-h-screen h-svh bg-background font-initial tracking-wide antialiased ",

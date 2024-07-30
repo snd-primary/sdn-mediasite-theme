@@ -12,6 +12,7 @@ export default function Home() {
 					<h2 className="text-3xl font-bold ">All Posts</h2>
 				</div>
 				<Breadcrumb />
+
 				<ul className="w-full h-fit grid grid-cols-2 @2xl/main:grid-cols-3 gap-4">
 					{blogCardData.map((post) => (
 						<BlogCard
