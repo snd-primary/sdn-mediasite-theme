@@ -15,7 +15,6 @@ const tagRecipe = tv({
 		fontSize: "sm",
 	},
 });
-
 const iconRecipe = tv({
 	variants: {
 		iconSize: {
